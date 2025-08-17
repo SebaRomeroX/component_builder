@@ -1,34 +1,41 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [estilos, setEstilos] = useState({
+    color: 'red',
+    fondo: 'aliceblue',
+    fuente: 'serif',
+    tamaño: '1',
+    peso: '400',
+    espacio: '0',
+    altura: '1.2'
+  })
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <section>
+      <h1>Component Builder</h1>
+
+      <article style={{
+        color: estilos.color,
+        background: estilos.fondo,
+        fontFamily: estilos.fuente,
+        fontSize: `${estilos.tamaño}em`,
+        fontWeight: estilos.peso,
+        letterSpacing: `${estilos.espacio}em`,
+        lineHeight: `${estilos.altura}em`
+      }}>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Phasellus sollicitudin congue dolor, at tempus sapien molestie in. 
+          Aenean turpis nisl, consectetur nec diam commodo, consectetur suscipit velit. 
+          Suspendisse eros mauris, pellentesque et tincidunt eu, sollicitudin eget risus. 
+          Praesent at lectus sit amet ipsum accumsan venenatis vel sed purus. 
+          Duis pulvinar lacinia lorem et maximus. Nulla sapien quam, 
+          varius nec efficitur eget, sodales sit amet elit. 
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+          per inceptos himenaeos.</p>
+      </article>
+    </section>
   )
 }
 
