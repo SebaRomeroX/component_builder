@@ -3,7 +3,7 @@ import './App.css'
 
 const Inputs = ({ setEstilos }) => {
   const Opciones = {
-    fuente: ['serif',
+    Fuente: ['serif',
       'system-ui',
       'Courier New',
       'Franklin Gothic Medium',
@@ -19,10 +19,10 @@ const Inputs = ({ setEstilos }) => {
       'cursive',
       'monospace'
     ],
-    tamaño: [1, 1.2, 1.4, 1.6],
-    peso: [400, 600],
-    espacio: [0, 0.04, 0.08, 0.12, 0.16, 0.2],
-    altura: [1.2, 1.4, 1.6]
+    Tamaño: [1, 1.2, 1.4, 1.6, 1.8],
+    Peso: [100, 400, 600],
+    Espacio: [0, 0.04, 0.08, 0.12, 0.16, 0.2],
+    Altura: [1.2, 1.4, 1.6, 1.8]
   }
 
   function handleInput (campo, valor) {
@@ -31,8 +31,8 @@ const Inputs = ({ setEstilos }) => {
 
   return (
     <section>
-      <h2>Configuracion</h2>
-      <section>
+      <h2 className='titulo'>Configuracion</h2>
+      <section className='inputs-configuracion'>
         {
           Object.keys(Opciones).map(opcion => (
             <label>
@@ -50,12 +50,12 @@ const Inputs = ({ setEstilos }) => {
 
         <label>
           <p>Color</p>
-          <input type='color' value='#F0F8FF' onChange={(e) => handleInput('color', e.target.value)}/>
+          <input type='color' onChange={(e) => handleInput('Color', e.target.value)}/>
         </label>
 
         <label>
           <p>Fondo</p>
-          <input type='color' onChange={(e) => handleInput('fondo', e.target.value)}/>
+          <input type='color' onChange={(e) => handleInput('Fondo', e.target.value)}/>
         </label>
       </section>
     </section>
@@ -63,21 +63,24 @@ const Inputs = ({ setEstilos }) => {
 }
 
 const Visualizador = ({ estilos }) => {
-  const { color, fondo, tamaño, fuente, peso, espacio, altura } = estilos
+  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura } = estilos
 
   return (
     <section>
-      <h2>Texto Ejemplo</h2>
+      <h2 className='titulo'>Texto de Ejemplo</h2>
 
-      <article style={{
-        color: color,
-        background: fondo,
-        fontFamily: fuente,
-        fontSize: `${tamaño}em`,
-        fontWeight: peso,
-        letterSpacing: `${espacio}em`,
-        lineHeight: `${altura}em`
-      }}>
+      <article
+        className='visualizador'
+        style={{
+          color: Color,
+          background: Fondo,
+          fontFamily: Fuente,
+          fontSize: `${Tamaño}em`,
+          fontWeight: Peso,
+          letterSpacing: `${Espacio}em`,
+          lineHeight: `${Altura}em`
+        }}
+      >
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
           Phasellus sollicitudin congue dolor, at tempus sapien molestie in. 
           Aenean turpis nisl, consectetur nec diam commodo, consectetur suscipit velit. 
@@ -93,11 +96,11 @@ const Visualizador = ({ estilos }) => {
 }
 
 const SalidaCodigo = ({ estilos }) => {
-  const { color, fondo, tamaño, fuente, peso, espacio, altura } = estilos
+  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura } = estilos
 
   return (
-    <section>
-      <h2>Codigo</h2>
+    <section className='salida-codigo'>
+      <h2 className='titulo'>Codigo</h2>
 
       <pre>{`
       <article class='texto'>
@@ -106,13 +109,13 @@ const SalidaCodigo = ({ estilos }) => {
 
       <style>
         .texto {
-          color: ${color};
-          background: ${fondo};
-          font-family: ${fuente};
-          font-size: ${tamaño}em;
-          font-weight: ${peso};
-          letter-spacing: ${espacio}em;
-          line-height: ${altura}em;
+          color: ${Color};
+          background: ${Fondo};
+          font-family: ${Fuente};
+          font-size: ${Tamaño}em;
+          font-weight: ${Peso};
+          letter-spacing: ${Espacio}em;
+          line-height: ${Altura}em;
         }
       </style>
       `}</pre>
@@ -122,18 +125,18 @@ const SalidaCodigo = ({ estilos }) => {
 
 const App = () => {
   const [estilos, setEstilos] = useState({
-    color: 'aliceblue',
-    fondo: 'black',
-    fuente: 'serif',
-    tamaño: '1',
-    peso: '400',
-    espacio: '0',
-    altura: '1.2'
+    Color: 'aliceblue',
+    Fondo: 'black',
+    Fuente: 'serif',
+    Tamaño: '1',
+    Peso: '400',
+    Espacio: '0',
+    Altura: '1.2'
   })
 
   return (
     <section>
-      <h1>Component Builder</h1>
+      <h1 className='titulo header'>Formateador de Texto</h1>
       <Inputs setEstilos={setEstilos} />
       <Visualizador estilos={estilos} />
       <SalidaCodigo estilos={estilos} />
