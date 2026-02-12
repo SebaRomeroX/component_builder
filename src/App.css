@@ -1,3 +1,6 @@
+
+/* ------------------------- GENERAL ------------------------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +19,9 @@ body {
   font-family: Tahoma;
   padding: 1em;
 }
+
+
+/* ------------------------- INPUTS ------------------------- */
 
 .inputs-configuracion {
   display: flex;
@@ -46,9 +52,15 @@ body {
   border-radius: .3em;
 }
 
+
+/* ------------------------- VISUALIZAR ------------------------- */
+
 .visualizador {
   padding: 1.6em 3em;
 }
+
+
+/* ------------------------- SALIDA ------------------------- */
 
 .salida-codigo {
   width: 70vw;
@@ -56,6 +68,38 @@ body {
   border: 1px solid rgba(240, 248, 255, 0.493);
   border-radius: 1em;
   background-color: rgb(29, 29, 29);
+}
+
+.salida-codigo article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.salida-codigo button {
+  background-color: inherit;
+  color: aliceblue;
+  border-radius: .6em;
+  font-size: 1em;
+  padding: .6em 1em;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: .4em;
+}
+
+.salida-codigo button:hover {
+  cursor: pointer;
+  background-color: rgb(39, 39, 39);
+}
+
+.salida-codigo button:active {
+  background-color: rgb(56, 56, 56);
+}
+
+.salida-codigo span {
+  width: 1em;
 }
 
 .salida-codigo pre {
