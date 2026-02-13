@@ -1,12 +1,14 @@
-export const Visualizador = ({ estilos }) => {
+import { useState } from "react"
+
+export const Visualizador = ({ estilos, texto, actualizarTexto }) => {
   const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura } = estilos
+  const [textoInicial] = useState(texto)
 
   return (
     <section>
-      <h2 className='titulo'>Texto de Ejemplo</h2>
-
       <article
         className='visualizador'
+        spellCheck='false'
         style={{
           color: Color,
           background: Fondo,
@@ -17,15 +19,36 @@ export const Visualizador = ({ estilos }) => {
           lineHeight: `${Altura}em`
         }}
       >
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Phasellus sollicitudin congue dolor, at tempus sapien molestie in. 
-          Aenean turpis nisl, consectetur nec diam commodo, consectetur suscipit velit. 
-          Suspendisse eros mauris, pellentesque et tincidunt eu, sollicitudin eget risus. 
-          Praesent at lectus sit amet ipsum accumsan venenatis vel sed purus. 
-          Duis pulvinar lacinia lorem et maximus. Nulla sapien quam, 
-          varius nec efficitur eget, sodales sit amet elit. 
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
-          per inceptos himenaeos.</p>
+        <h2
+          contentEditable="plaintext-only"
+          onInput={(e) => actualizarTexto('titulo', e.target.textContent)}
+        >
+          {textoInicial.titulo}
+        </h2>
+        <p
+          contentEditable="plaintext-only"
+          onInput={(e) => actualizarTexto('parrafo1', e.target.textContent)}
+        >
+          {textoInicial.parrafo1}
+        </p>
+        <p
+          contentEditable="plaintext-only"
+          onInput={(e) => actualizarTexto('parrafo2', e.target.textContent)}
+        >
+          {textoInicial.parrafo2}
+        </p>
+        <h3
+          contentEditable="plaintext-only"
+          onInput={(e) => actualizarTexto('subtitulo', e.target.textContent)}
+        >
+          {textoInicial.subtitulo}
+        </h3>
+        <p
+          contentEditable="plaintext-only"
+          onInput={(e) => actualizarTexto('parrafo3', e.target.textContent)}
+        >
+          {textoInicial.parrafo3}
+        </p>
       </article>
     </section>
   )

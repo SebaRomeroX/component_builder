@@ -1,12 +1,13 @@
 import { useState } from "react"
 
-export const SalidaCodigo = ({ estilos }) => {
+export const SalidaCodigo = ({ estilos, texto }) => {
   const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura } = estilos
+  const { titulo, parrafo1, parrafo2, subtitulo, parrafo3 } = texto
   const [copiar, setCopiar] = useState('📝')
+
 
   function copiarCodigo() {
     const codigo = document.getElementById('codigo').textContent
-    console.log(codigo)
 
     navigator.clipboard.writeText(codigo)
       .then(() => {
@@ -27,7 +28,11 @@ export const SalidaCodigo = ({ estilos }) => {
 
       <pre id="codigo">{`
       <article class='texto'>
-        <p>Lorem ipsum</p>
+        <h2>${titulo}</h2>
+        <p>${parrafo1}</p>
+        <p>${parrafo2}</p>
+        <h3>${subtitulo}</h3>
+        <p>${parrafo3}</p>
       </article>
 
       <style>

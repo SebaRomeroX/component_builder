@@ -56,14 +56,22 @@ body {
 /* ------------------------- VISUALIZAR ------------------------- */
 
 .visualizador {
-  padding: 1.6em 3em;
+  margin: 1em 0;
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: .6em;
+}
+
+.visualizador *:focus {
+  outline: none;
 }
 
 
 /* ------------------------- SALIDA ------------------------- */
 
 .salida-codigo {
-  width: 70vw;
+  /* width: 70vw; */
   margin: 2em 3em;
   border: 1px solid rgba(240, 248, 255, 0.493);
   border-radius: 1em;
@@ -106,4 +114,5 @@ body {
   background-color: black;
   font-size: 1.4em;
   border-radius: 0 0 1em 1em;
+  overflow: scroll;
 }

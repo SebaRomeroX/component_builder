@@ -16,16 +16,32 @@ const App = () => {
     Altura: '1.4'
   })
 
+  const [texto, setTexto] = useState({
+    titulo: 'Titulo de Ejemplo',
+    parrafo1: 'Este es un texto de prueba.',
+    parrafo2: 'Puedes escribir lo que quieras aqui para ver como se aplican los estilos.',
+    subtitulo: 'Un subtitulo',
+    parrafo3: 'O tambien puedes pegar otro texto, si prefieres.'
+  })
+
   function actualizarEstilos (campo, valor) {
     setEstilos(prev => ({...prev, [campo]: valor}))
+  }
+
+  function actualizarTexto (campo, valor) {
+    setTexto(prev => ({...prev, [campo]: valor}))
   }
 
   return (
     <section>
       <h1 className='titulo header'>Estila tu Texto</h1>
       <Inputs actualizarEstilos={actualizarEstilos} />
-      <Visualizador estilos={estilos} />
-      <SalidaCodigo estilos={estilos} />
+      <Visualizador
+        actualizarTexto={actualizarTexto}
+        texto={texto}
+        estilos={estilos}
+      />
+      <SalidaCodigo texto={texto} estilos={estilos} />
     </section>
   )
 }
