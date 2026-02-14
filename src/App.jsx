@@ -1,32 +1,39 @@
 import { useState } from 'react'
 import './App.css'
-import { Inputs } from './components/Inputs'
+import { StyleEditor } from './components/style_editor/StyleEditor'
 import { SalidaCodigo } from './components/Salida'
 import { Visualizador } from './components/Visualizador'
 
-
-const App = () => {
+function useEstilos () {
   const [estilos, setEstilos] = useState({
-    Color: 'aliceblue', // NO HAY QUE PONERLO A MANO --- TOMAR DE VALORES DEFINIDOS
-    Fondo: 'black',
+    Color: '#F0F8FF', 
+    Fondo: '#020202',
     Fuente: 'system-ui',
     Tamaño: '1.4',
     Peso: '400',
     Espacio: '0.04',
-    Altura: '1.4'
-  })
-
-  const [texto, setTexto] = useState({
-    titulo: 'Titulo de Ejemplo',
-    parrafo1: 'Este es un texto de prueba.',
-    parrafo2: 'Puedes escribir lo que quieras aqui para ver como se aplican los estilos.',
-    subtitulo: 'Un subtitulo',
-    parrafo3: 'O tambien puedes pegar otro texto, si prefieres.'
+    Altura: '1.4',
+    gap: '1',
+    align: 'left',
   })
 
   function actualizarEstilos (campo, valor) {
     setEstilos(prev => ({...prev, [campo]: valor}))
   }
+
+  return { estilos, actualizarEstilos }
+}
+
+const App = () => {
+  const { estilos, actualizarEstilos } = useEstilos()
+
+  const [texto, setTexto] = useState({
+    titulo: 'Texto de Ejemplo',
+    parrafo1: 'Esta es una vista previa de tus estilos.',
+    parrafo2: 'Puedes escribir lo que quieras aqui para ver como se aplican los estilos. Este va a ser un string mas largo para que se aprecie el salto de linea y la distancia entre ellas.',
+    subtitulo: 'Pega un texto',
+    parrafo3: 'Puedes copiar cualquien texto y pegarlo aqui, si prefieres.'
+  })
 
   function actualizarTexto (campo, valor) {
     setTexto(prev => ({...prev, [campo]: valor}))
@@ -35,7 +42,10 @@ const App = () => {
   return (
     <section>
       <h1 className='titulo header'>Estila tu Texto</h1>
-      <Inputs actualizarEstilos={actualizarEstilos} />
+      <StyleEditor
+        actualizarEstilos={actualizarEstilos}
+        estilos={estilos}
+      />
       <Visualizador
         actualizarTexto={actualizarTexto}
         texto={texto}

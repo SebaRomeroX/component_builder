@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const Visualizador = ({ estilos, texto, actualizarTexto }) => {
-  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura } = estilos
+  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura, gap, align } = estilos
   const [textoInicial] = useState(texto)
 
   return (
@@ -16,7 +16,9 @@ export const Visualizador = ({ estilos, texto, actualizarTexto }) => {
           fontSize: `${Tamaño}em`,
           fontWeight: Peso,
           letterSpacing: `${Espacio}em`,
-          lineHeight: `${Altura}em`
+          lineHeight: `${Altura}em`,
+          gap: `${gap}em`,
+          textAlign: align
         }}
       >
         <h2
