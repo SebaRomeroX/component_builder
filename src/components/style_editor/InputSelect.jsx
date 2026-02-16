@@ -1,10 +1,10 @@
 export const InputSelect = ({ elemento ,funcion, inicial }) => {
-  const { label, opciones } = elemento
+  const { label, opciones, campo } = elemento
   return (
     <label>
       <p>{label}</p>
       <select
-        onChange={(e) => funcion(label, e.target.value)}
+        onChange={(e) => funcion(campo, e.target.value)}
         defaultValue={inicial}
       >
         {

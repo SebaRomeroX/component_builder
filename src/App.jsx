@@ -6,13 +6,13 @@ import { Visualizador } from './components/Visualizador'
 
 function useEstilos () {
   const [estilos, setEstilos] = useState({
-    Color: '#F0F8FF', 
-    Fondo: '#020202',
-    Fuente: 'system-ui',
-    Tamaño: '1.4',
-    Peso: '400',
-    Espacio: '0.04',
-    Altura: '1.4',
+    color: '#F0F8FF', // sacar de inputsParams ?¡?¡?¡?
+    background: '#020202',
+    family: 'system-ui',
+    size: '1.4',
+    weight: '400',
+    spacing: '0.04',
+    height: '1.4',
     gap: '1',
     align: 'left',
   })

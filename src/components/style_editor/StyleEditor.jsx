@@ -1,10 +1,10 @@
-import { InputsNumberParams, InputsSelectsParams } from '../../InputsParams.js'
+import { InputsColorParams, InputsNumberParams, InputsSelectsParams } from '../../InputsParams.js'
 import { InputNumber } from './InputNumber.jsx'
 import { InputSelect } from './InputSelect.jsx'
 import { InputColor } from './InputColor.jsx'
 
 export const StyleEditor = ({ estilos, actualizarEstilos }) => {
-  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura, gap, align } = estilos
+  const { color, background, size, family, weight, spacing, height, gap, align } = estilos
 
   return (
     <section>
@@ -21,40 +21,40 @@ export const StyleEditor = ({ estilos, actualizarEstilos }) => {
           inicial={align}
         />
         <InputColor
-          label={'Color'}
+          elemento={InputsColorParams.color}
           funcion={actualizarEstilos}
-          inicial={Color}
+          inicial={color}
         />
         <InputColor
-          label={'Fondo'}
+          elemento={InputsColorParams.fondo}
           funcion={actualizarEstilos}
-          inicial={Fondo}
+          inicial={background}
         />
       </section>
       <section className='inputs-configuracion'>
         <InputSelect
           elemento={InputsSelectsParams.fuente}
           funcion={actualizarEstilos}
-          inicial={Fuente}
+          inicial={family}
         />
         <InputSelect
           elemento={InputsSelectsParams.peso}
           funcion={actualizarEstilos}
-          inicial={Peso}
+          inicial={weight}
         />
         <InputNumber
           elemento={InputsNumberParams.tamaño}
-          inicial={Tamaño}
+          inicial={size}
           funcion={actualizarEstilos}
         />
         <InputNumber
           elemento={InputsNumberParams.altura}
-          inicial={Altura}
+          inicial={height}
           funcion={actualizarEstilos}
         />
         <InputNumber
           elemento={InputsNumberParams.espacio}
-          inicial={Espacio}
+          inicial={spacing}
           funcion={actualizarEstilos}
         />
       </section>

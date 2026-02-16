@@ -25,15 +25,40 @@ const OPCIONES_FUENTE = [
 
 
 export const InputsNumberParams = {
-  gap: { label: 'gap', min: 1, max: 3, step: 0.1 },
-  tamaño: { label: 'Tamaño', min: 1, max: 2, step: 0.1 },
-  altura: { label: 'Altura', min: 1, max: 2, step: 0.1 },
-  espacio: { label: 'Espacio', min: 0, max: 0.3, step: 0.01 },
+  gap: {
+    label: 'Espacio elementos',
+    campo: 'gap',
+    min: 1,
+    max: 3,
+    step: 0.1 
+  },
+  tamaño: {
+    label: 'Tamaño',
+    campo: 'size',
+    min: 1,
+    max: 2,
+    step: 0.1
+  },
+  altura: {
+    label: 'Altura linea',
+    campo: 'height',
+    min: 1,
+    max: 2, 
+    tep: 0.1
+  },
+  espacio: {
+    label: 'Espacio letras',
+    campo: 'spacing',
+    min: 0,
+    max: 0.3,
+    step: 0.01
+  },
 }
 
 export const InputsSelectsParams = {
   align: {
-    label: 'align',
+    label: 'Posicion texto',
+    campo: 'align',
     opciones: [
       {nombre: 'inicio', contenido: 'left'},
       {nombre: 'centrado', contenido: 'center'}
@@ -41,14 +66,27 @@ export const InputsSelectsParams = {
   },
   fuente: {
     label: 'Fuente',
+    campo: 'family',
     opciones: OPCIONES_FUENTE,
   },
   peso: {
-    label: 'Peso',
+    label: 'Ancho letra',
+    campo: 'weight',
     opciones: [
       {nombre: '100', contenido: 100},
       {nombre: '400', contenido: 400},
       {nombre: '600', contenido: 600},
     ],
+  },
+}
+
+export const InputsColorParams = {
+  color: {
+    label: 'Color letra',
+    campo: 'color',
+  },
+  fondo: {
+    label: 'Color fondo',
+    campo: 'background',
   },
 }

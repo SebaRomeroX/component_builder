@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const Visualizador = ({ estilos, texto, actualizarTexto }) => {
-  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura, gap, align } = estilos
+  const { color, background, size, family, weight, spacing, height, gap, align } = estilos
   const [textoInicial] = useState(texto)
 
   return (
@@ -10,13 +10,13 @@ export const Visualizador = ({ estilos, texto, actualizarTexto }) => {
         className='visualizador'
         spellCheck='false'
         style={{
-          color: Color,
-          background: Fondo,
-          fontFamily: Fuente,
-          fontSize: `${Tamaño}em`,
-          fontWeight: Peso,
-          letterSpacing: `${Espacio}em`,
-          lineHeight: `${Altura}em`,
+          color: color,
+          background: background,
+          fontFamily: family,
+          fontSize: `${size}em`,
+          fontWeight: weight,
+          letterSpacing: `${spacing}em`,
+          lineHeight: `${height}em`,
           gap: `${gap}em`,
           textAlign: align
         }}

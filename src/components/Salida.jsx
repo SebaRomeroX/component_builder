@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const SalidaCodigo = ({ estilos, texto }) => {
-  const { Color, Fondo, Tamaño, Fuente, Peso, Espacio, Altura, gap, align } = estilos
+  const { color, background, size, family, weight, spacing, height, gap, align } = estilos
   const { titulo, parrafo1, parrafo2, subtitulo, parrafo3 } = texto
   const [copiar, setCopiar] = useState('📝')
 
@@ -37,13 +37,13 @@ export const SalidaCodigo = ({ estilos, texto }) => {
 
       <style>
         .texto {
-          color: ${Color};
-          background: ${Fondo};
-          font-family: ${Fuente};
-          font-size: ${Tamaño}em;
-          font-weight: ${Peso};
-          letter-spacing: ${Espacio}em;
-          line-height: ${Altura}em;
+          color: ${color};
+          background: ${background};
+          font-family: ${family};
+          font-size: ${size}em;
+          font-weight: ${weight};
+          letter-spacing: ${spacing}em;
+          line-height: ${height}em;
           display: flex;
           flex-direction: column;
           gap: ${gap}em;
