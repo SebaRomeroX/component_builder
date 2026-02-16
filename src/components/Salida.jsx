@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { EstilosContext } from "../context/estilosContext"
 
-export const SalidaCodigo = ({ estilos, texto }) => {
+export const SalidaCodigo = ({ texto }) => {
+  const { estilos } = useContext(EstilosContext)
   const { color, background, size, family, weight, spacing, height, gap, align } = estilos
   const { titulo, parrafo1, parrafo2, subtitulo, parrafo3 } = texto
   const [copiar, setCopiar] = useState('📝')

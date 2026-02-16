@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { EstilosContext } from "../context/estilosContext"
 
-export const Visualizador = ({ estilos, texto, actualizarTexto }) => {
+export const Visualizador = ({ texto, actualizarTexto }) => {
+  const { estilos } = useContext(EstilosContext)
   const { color, background, size, family, weight, spacing, height, gap, align } = estilos
   const [textoInicial] = useState(texto)
 

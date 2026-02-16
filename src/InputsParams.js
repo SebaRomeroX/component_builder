@@ -23,7 +23,6 @@ const OPCIONES_FUENTE = [
   { nombre: 'System UI', contenido: 'system-ui' },
 ]
 
-
 export const InputsNumberParams = {
   gap: {
     label: 'Espacio elementos',
@@ -44,7 +43,7 @@ export const InputsNumberParams = {
     campo: 'height',
     min: 1,
     max: 2, 
-    tep: 0.1
+    step: 0.1
   },
   espacio: {
     label: 'Espacio letras',

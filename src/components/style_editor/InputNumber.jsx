@@ -1,15 +1,22 @@
-export const InputNumber = ({ elemento, funcion, inicial }) => {
+import { useContext } from "react"
+import { EstilosContext } from "../../context/estilosContext"
+
+export const InputNumber = ({ elemento }) => {
   const { label, min, max, step, campo } = elemento
+  const { estilos, actualizarEstilos } = useContext(EstilosContext)
+
+  const valorObtenido = estilos[campo]
+  
   return (
     <label>
       <p>{label}</p>
       <input
         type="number"
-        onChange={(e) => funcion(campo, e.target.value)}
+        onChange={(e) => actualizarEstilos(campo, e.target.value)}
         min={min}
         max={max}
         step={step}
-        defaultValue={inicial}
+        defaultValue={valorObtenido}
       />
     </label>
   )

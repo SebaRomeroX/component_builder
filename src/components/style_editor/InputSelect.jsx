@@ -1,11 +1,18 @@
-export const InputSelect = ({ elemento ,funcion, inicial }) => {
+import { useContext } from "react"
+import { EstilosContext } from "../../context/estilosContext"
+
+export const InputSelect = ({ elemento }) => {
   const { label, opciones, campo } = elemento
+  const { estilos, actualizarEstilos } = useContext(EstilosContext)
+
+  const valorObtenido = estilos[campo]
+  
   return (
     <label>
       <p>{label}</p>
       <select
-        onChange={(e) => funcion(campo, e.target.value)}
-        defaultValue={inicial}
+        onChange={(e) => actualizarEstilos(campo, e.target.value)}
+        defaultValue={valorObtenido}
       >
         {
           opciones.map(opcion =>

@@ -4,28 +4,7 @@ import { StyleEditor } from './components/style_editor/StyleEditor'
 import { SalidaCodigo } from './components/Salida'
 import { Visualizador } from './components/Visualizador'
 
-function useEstilos () {
-  const [estilos, setEstilos] = useState({
-    color: '#F0F8FF', // sacar de inputsParams ?¡?¡?¡?
-    background: '#020202',
-    family: 'system-ui',
-    size: '1.4',
-    weight: '400',
-    spacing: '0.04',
-    height: '1.4',
-    gap: '1',
-    align: 'left',
-  })
-
-  function actualizarEstilos (campo, valor) {
-    setEstilos(prev => ({...prev, [campo]: valor}))
-  }
-
-  return { estilos, actualizarEstilos }
-}
-
 const App = () => {
-  const { estilos, actualizarEstilos } = useEstilos()
 
   const [texto, setTexto] = useState({
     titulo: 'Texto de Ejemplo',
@@ -42,16 +21,12 @@ const App = () => {
   return (
     <section>
       <h1 className='titulo header'>Estila tu Texto</h1>
-      <StyleEditor
-        actualizarEstilos={actualizarEstilos}
-        estilos={estilos}
-      />
+      <StyleEditor />
       <Visualizador
         actualizarTexto={actualizarTexto}
         texto={texto}
-        estilos={estilos}
       />
-      <SalidaCodigo texto={texto} estilos={estilos} />
+      <SalidaCodigo texto={texto} />
     </section>
   )
 }
