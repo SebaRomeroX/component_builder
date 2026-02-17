@@ -5,7 +5,6 @@ import { SalidaCodigo } from './components/Salida'
 import { Visualizador } from './components/Visualizador'
 
 const App = () => {
-
   const [texto, setTexto] = useState({
     titulo: 'Texto de Ejemplo',
     parrafo1: 'Esta es una vista previa de tus estilos.',

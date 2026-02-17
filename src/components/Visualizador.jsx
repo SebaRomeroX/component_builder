@@ -23,6 +23,8 @@ export const Visualizador = ({ texto, actualizarTexto }) => {
           textAlign: align
         }}
       >
+        {/* contentEditable esta en CADA elemento para que no se elimine
+          si se borrara su contenido, queda el elemento vacio */}
         <h2
           contentEditable="plaintext-only"
           onInput={(e) => actualizarTexto('titulo', e.target.textContent)}
