@@ -22,38 +22,41 @@ export const SalidaCodigo = ({ texto }) => {
   }
 
   return (
-    <section className='salida-codigo'>
-      <article>
-        <h2 className='titulo'>Codigo</h2>
-        <button onClick={copiarCodigo}>Copiar <span>{copiar}</span></button>
+    <section className='seccion'>
+      <article className='salida-codigo'>
+        <header>
+          <h2 className='titulo'>Codigo</h2>
+          <button onClick={copiarCodigo}>Copiar <span>{copiar}</span></button>
+        </header>
+      
+        <pre id="codigo">{`
+  <article class='texto'>
+    <h2>${titulo}</h2>
+    <p>${parrafo1}</p>
+    <p>${parrafo2}</p>
+    <h3>${subtitulo}</h3>
+    <p>${parrafo3}</p>
+  </article>
+
+  <style>
+    .texto {
+      color: ${color};
+      background: ${background};
+      font-family: ${family};
+      font-size: ${size}em;
+      font-weight: ${weight};
+      letter-spacing: ${spacing}em;
+      line-height: ${height}em;
+      display: flex;
+      flex-direction: column;
+      gap: ${gap}em;
+      text-align: ${align};
+      padding: 30px 60px;
+    }
+  </style>
+        `}</pre>
       </article>
 
-      <pre id="codigo">{`
-      <article class='texto'>
-        <h2>${titulo}</h2>
-        <p>${parrafo1}</p>
-        <p>${parrafo2}</p>
-        <h3>${subtitulo}</h3>
-        <p>${parrafo3}</p>
-      </article>
-
-      <style>
-        .texto {
-          color: ${color};
-          background: ${background};
-          font-family: ${family};
-          font-size: ${size}em;
-          font-weight: ${weight};
-          letter-spacing: ${spacing}em;
-          line-height: ${height}em;
-          display: flex;
-          flex-direction: column;
-          gap: ${gap}em;
-          text-align: ${align};
-          padding: 30px 60px;
-        }
-      </style>
-      `}</pre>
     </section>
   )
 }

@@ -5,7 +5,7 @@ import { InputColor } from './InputColor.jsx'
 
 export const StyleEditor = () => {
   return (
-    <section>
+    <section className='seccion'>
       <h2 className='titulo'>Configuracion</h2>
       <section className='inputs-configuracion'>
         <InputNumber elemento={InputsNumberParams.gap} />

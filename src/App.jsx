@@ -20,13 +20,18 @@ const App = () => {
 
   return (
     <section>
-      <h1 className='titulo header'>Estila tu Texto</h1>
+      <header className='header'>
+        <h1 className='titulo seccion'>Estila tu Texto</h1>
+      </header>
       <StyleEditor />
       <Visualizador
         actualizarTexto={actualizarTexto}
         texto={texto}
       />
       <SalidaCodigo texto={texto} />
+      <footer className='footer'>
+        <p>Hecho con ❤ por <a target="_blank" href="https://sebaromerox.github.io/portafolios/">Seba Romero</a></p>
+      </footer>
     </section>
   )
 }

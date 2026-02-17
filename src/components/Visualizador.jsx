@@ -7,9 +7,9 @@ export const Visualizador = ({ texto, actualizarTexto }) => {
   const [textoInicial] = useState(texto)
 
   return (
-    <section>
+    <section style={{ background: background }}>
       <article
-        className='visualizador'
+        className='visualizador seccion'
         spellCheck='false'
         style={{
           color: color,

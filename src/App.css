@@ -9,6 +9,7 @@
 body {
   background-color: rgb(17, 17, 17);
   color: aliceblue;
+  font-family: system-ui;
 }
 
 .header {
@@ -17,7 +18,12 @@ body {
 
 .titulo {
   font-family: Tahoma;
-  padding: 1em;
+}
+
+.seccion {
+  padding: 36px;
+  max-width: 1204px;
+  margin: auto;
 }
 
 
@@ -28,7 +34,6 @@ body {
   padding: 1em 2em;
   gap: 2em;
 
-  font-family: system-ui;
   font-size: 1.1em;
   opacity: .9;
 }
@@ -56,8 +61,6 @@ body {
 /* ------------------------- VISUALIZAR ------------------------- */
 
 .visualizador {
-  margin: 1em 0;
-  padding: 30px 60px;
   display: flex;
   flex-direction: column;
 }
@@ -70,18 +73,16 @@ body {
 /* ------------------------- SALIDA ------------------------- */
 
 .salida-codigo {
-  /* width: 70vw; */
-  margin: 2em 3em;
   border: 1px solid rgba(240, 248, 255, 0.493);
   border-radius: 1em;
   background-color: rgb(29, 29, 29);
 }
 
-.salida-codigo article {
+.salida-codigo header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
+  padding: 1em 2em;
 }
 
 .salida-codigo button {
@@ -113,5 +114,43 @@ body {
   background-color: black;
   font-size: 1.4em;
   border-radius: 0 0 1em 1em;
-  overflow: scroll;
+  overflow: auto;
+}
+
+
+/*  ARREGLAR AQUI ESTOS ESTILOS */
+/*  LA BARRA ESTA FEA */
+/*  SE ASOMA POR ABAJO */
+.salida-codigo pre::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px;
+}
+
+.salida-codigo pre::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.salida-codigo pre::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.salida-codigo pre::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+
+/* ------------------------- FOOTER ------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
 }
